@@ -1,0 +1,262 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dealix VIBRANT Color Palette - Enhanced Saturation */
+    --electric-green: #24E055;
+    --bright-lime: #66FF75;
+    --aqua-green: #38FF11;
+    --cyan-glow: #38FF11;
+    --deep-teal: #00688A;
+    --charcoal: #013E27;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-[#0d2818] via-[#000000] to-[#0a1f15] text-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Enhanced background saturation */
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+}
+
+/* Gradient animation for more dynamic feel */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@layer components {
+  /* ENHANCED Sharp Glassmorphic Card - XEET Style with MORE VIBRANCE */
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-xl border-2 border-white/15 rounded-2xl;
+    box-shadow: 0 8px 32px 0 rgba(36, 224, 85, 0.15), 0 0 80px 0 rgba(36, 224, 85, 0.05);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/[0.06] hover:border-dealix-electric-green/50 hover:shadow-2xl;
+    box-shadow: 0 8px 32px 0 rgba(36, 224, 85, 0.15), 0 0 80px 0 rgba(36, 224, 85, 0.05);
+  }
+  
+  .glass-card-hover:hover {
+    box-shadow: 0 12px 48px 0 rgba(36, 224, 85, 0.3), 0 0 100px 0 rgba(36, 224, 85, 0.15);
+  }
+
+  /* ENHANCED Dealix Button - Sharp and Clean with MORE GLOW */
+  .btn-dealix {
+    @apply bg-dealix-gradient text-black font-bold px-8 py-4 rounded-xl border-2 border-dealix-electric-green/30 hover:border-dealix-electric-green hover:shadow-2xl transition-all duration-300;
+    box-shadow: 0 8px 32px 0 rgba(36, 224, 85, 0.4), 0 0 60px 0 rgba(36, 224, 85, 0.2);
+  }
+  
+  .btn-dealix:hover {
+    box-shadow: 0 12px 48px 0 rgba(36, 224, 85, 0.6), 0 0 80px 0 rgba(36, 224, 85, 0.3);
+  }
+
+  .btn-dealix-outline {
+    @apply border-2 border-dealix-electric-green/50 text-dealix-electric-green font-bold px-8 py-4 rounded-xl hover:bg-dealix-electric-green/15 hover:border-dealix-electric-green transition-all duration-300 backdrop-blur-sm;
+    box-shadow: 0 4px 24px 0 rgba(36, 224, 85, 0.2);
+  }
+  
+  .btn-dealix-outline:hover {
+    box-shadow: 0 8px 32px 0 rgba(36, 224, 85, 0.4), 0 0 60px 0 rgba(36, 224, 85, 0.2);
+  }
+
+  /* ENHANCED Glow Effects - MORE INTENSE */
+  .glow-green {
+    @apply shadow-2xl;
+    box-shadow: 0 0 40px rgba(36, 224, 85, 0.6), 0 0 80px rgba(36, 224, 85, 0.3);
+  }
+
+  .glow-green-strong {
+    box-shadow: 0 0 60px rgba(36, 224, 85, 0.8), 0 0 100px rgba(36, 224, 85, 0.4);
+  }
+
+  /* Crisp Gradient Text - MORE VIBRANT */
+  .text-gradient {
+    background: linear-gradient(135deg, #24E055 0%, #66FF75 50%, #38FF11 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.1) saturate(1.2);
+  }
+
+  /* Sharp Borders - MORE VISIBLE */
+  .border-sharp {
+    @apply border-2 border-white/25;
+  }
+
+  .border-sharp-green {
+    @apply border-2 border-dealix-electric-green/50;
+    box-shadow: 0 0 20px rgba(36, 224, 85, 0.2);
+  }
+
+  /* Backdrop Blur Variations */
+  .backdrop-blur-sharp {
+    backdrop-filter: blur(24px) saturate(1.5);
+    -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  }
+
+  /* Card with Inner Glow - MORE INTENSE */
+  .card-glow-inner {
+    @apply relative overflow-hidden;
+  }
+
+  .card-glow-inner::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-dealix-electric-green/8 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .card-glow-inner:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Status Indicators - MORE VIBRANT */
+  .status-dot {
+    @apply w-2 h-2 rounded-full bg-dealix-electric-green animate-pulse;
+    box-shadow: 0 0 12px rgba(36, 224, 85, 0.8), 0 0 24px rgba(36, 224, 85, 0.4);
+  }
+
+  /* Premium Input Fields */
+  .input-glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border-2 border-white/15 rounded-xl px-6 py-4 text-white placeholder:text-gray-500 focus:border-dealix-electric-green/60 focus:outline-none transition-all duration-300;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .input-glass:focus {
+    box-shadow: 0 4px 24px 0 rgba(36, 224, 85, 0.2), 0 0 40px 0 rgba(36, 224, 85, 0.1);
+  }
+
+  /* Section Dividers - MORE VIBRANT */
+  .divider-glow {
+    @apply h-px bg-gradient-to-r from-transparent via-dealix-electric-green/60 to-transparent;
+    box-shadow: 0 0 20px rgba(36, 224, 85, 0.4);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom Scrollbar - VIBRANT Green Theme */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(36, 224, 85, 0.4) rgba(255, 255, 255, 0.05);
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-white/5 rounded-full;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-dealix-electric-green/40 rounded-full;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    @apply bg-dealix-electric-green/60;
+  }
+
+  /* Animation Delays */
+  .delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .delay-2000 {
+    animation-delay: 2s;
+  }
+
+  /* Text Shadows for Better Readability - MORE VIBRANT */
+  .text-shadow-glow {
+    text-shadow: 0 0 30px rgba(36, 224, 85, 0.6), 0 0 60px rgba(36, 224, 85, 0.3);
+  }
+
+  .text-shadow-sharp {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Sharp Focus States */
+  .focus-sharp {
+    @apply focus:outline-none focus:ring-2 focus:ring-dealix-electric-green/60 focus:ring-offset-2 focus:ring-offset-black;
+  }
+  
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+}
+
+/* ENHANCED Custom Animations - MORE VIBRANT */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Smooth Page Transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ENHANCED Selection Styling - MORE VIBRANT */
+::selection {
+  @apply bg-dealix-electric-green/40 text-white;
+}
+
+::-moz-selection {
+  @apply bg-dealix-electric-green/40 text-white;
+}
+
+/* Additional glow animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(36, 224, 85, 0.3), 0 0 40px rgba(36, 224, 85, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(36, 224, 85, 0.6), 0 0 80px rgba(36, 224, 85, 0.3);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
